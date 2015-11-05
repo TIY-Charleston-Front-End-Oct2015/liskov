@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Chatasaourusrex</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Philosopher:400,400italic,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/master.css" media="screen" title="no title" charset="utf-8">
   </head>
 
@@ -13,59 +13,59 @@
 
 
 <!-- TOP NAVIGATION -->
-  <header class="hidden">
+  <header>
+    <h2>CHATASAURUSTEXT</h2>
+    <img src="img/chatorexLogo.png" alt="Dino" />
+    <img class="settings" src="img/settings.svg" alt="settings" />
 
+
+<!-- DROP DOWN NAV - DO WE WANT? -->
+    <!-- <nav class="topNav">
+    	<ul>
+    		<li><a href="#">Home</a></li>
+    		<li><a href="#">Help Center</a>
+    			<ul>
+    				<li><a href="#">FAQ's</a></li>
+    				<li><a href="#">Email/Password Reset</a></li>
+    				<li><a href="#">Tutorials</a></li>
+    			</ul>
+    		</li>
+    		<li><a href="#">About</a>
+    			<ul>
+    				<li><a href="#">Executive Team</a></li>
+    				<li><a href="#">Contact Information</a></li>
+    			</ul>
+        <li><a href="#">Settings</a>
+          <ul>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Logout</a></li>
+          </ul>
+    </nav> -->
   </header>
 
-
-<!-- FRANKS NAV -->
-    <div class="container-fluid hidden-class">
-      <nav class="navbar navbar-default hidden">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="#"></a>
-          <img src="http://www.fillmurray.com/100/100" alt="" />
-      </div>
-        <ul class="nav navbar-nav navbar-right">
-          <li><img src="http://www.fillmurray.com/100/100" alt="" /><p class="navbar-text">I.P. Freely</p></li>
-          <li><button type="button" class="btn btn-default navbar-btn">Sign out</button></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">settings <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="#">Separated link</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
 <!-- MAIN CHAT PAGE -->
-    <div class = "container hidden">
-      <div class="row">
-          <div class="col-xs-6 col-md-4" rel="sidebar">
-            <ul id="sideList">
-            </ul>
-          </div>
-          <div class="col-xs-12 col-sm-6 col-md-8" rel= "chatbox">.col-xs-12 .col-sm-6 .col-md-8
-          </div>
-        </div>
-      </div>
+    <div class = "container">
 
+      <aside class="col-md-4" id="sidebar">
+        <h2>CHAT-O-REX USERS</h2>
+        <ul id="sideList">
+        </ul>
+      </aside>
 
-      <section class="messageWriter hidden">
-        <form>
-          <textarea name="chat" rows="5" cols="30" placeholder="Enter message here..."></textarea>
-          <input type="submit" name="submit" value="submit">
-        </form>
+      <section class="col-md-8 chatbox" rel= "chatbox">
+
       </section>
-    </div>
+
+    <section class="messageWriter">
+      <form>
+        <textarea name="chat" rows="6" cols="90" placeholder="C h a t o s a u r u s  T e x t . . . "></textarea><br>
+        <input type="submit" name="submit" value="submit">
+      </form>
+    </section>
+   </div>
 
 <!-- LOGIN SCREEN       -->
-      <div class = "col-md-5 form-group" id = "loginContainer" rel="login">
+      <!-- <div class = "col-md-5 form-group" id = "loginContainer" rel="login">
         <h1>Login</h1>
         <input class= "form-control" type="text" placeholder="Username" name="username" value="">
         <a href="#" id ="signUp">New User? Click here!</a>
@@ -74,7 +74,7 @@
         <input class ="btn btn-default btn-lg hidden-class" id= "loginSubmit" type="submit" name="loginSubmit" value="Submit">
         <input class ="btn btn-default btn-lg" id= "loginReturn" type="submit" name="loginReturn" value="Submit">
       </div>
-    </div>
+    </div> -->
 
     <script type="text/javascript" src= "bower_components/jquery/dist/jquery.js">
     </script>
