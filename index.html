@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Chatasaourusrex</title>
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
     <link rel="stylesheet" href="css/master.css" media="screen" title="no title" charset="utf-8">
   </head>
@@ -11,8 +11,16 @@
 
   <body>
 
-    <nav class="navbar navbar-default hidden-class">
-    <div class="container-fluid">
+
+<!-- TOP NAVIGATION -->
+  <header class="hidden">
+
+  </header>
+
+
+<!-- FRANKS NAV -->
+    <div class="container-fluid hidden-class">
+      <nav class="navbar navbar-default hidden">
       <div class="navbar-header">
         <a class="navbar-brand" href="#"></a>
           <img src="http://www.fillmurray.com/100/100" alt="" />
@@ -35,20 +43,28 @@
     </div>
   </nav>
 
-
-    <div class = "container">
-      <div class="col-md-8 hidden-class" rel= "chatbox">
+<!-- MAIN CHAT PAGE -->
+    <div class = "container hidden">
+      <div class="row">
+          <div class="col-xs-6 col-md-4" rel="sidebar">
+            <ul id="sideList">
+            </ul>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-8" rel= "chatbox">.col-xs-12 .col-sm-6 .col-md-8
+          </div>
+        </div>
       </div>
-      <div class="messageWriter hidden-class">
+
+
+      <section class="messageWriter hidden">
         <form>
           <textarea name="chat" rows="5" cols="30" placeholder="Enter message here..."></textarea>
           <input type="submit" name="submit" value="submit">
         </form>
-      </div>
-      <div class="col-md-4 hidden-class" rel="sidebar">
-        <ul id="sideList">
-        </ul>
-      </div>
+      </section>
+    </div>
+
+<!-- LOGIN SCREEN       -->
       <div class = "col-md-5 form-group" id = "loginContainer" rel="login">
         <h1>Login</h1>
         <input class= "form-control" type="text" placeholder="Username" name="username" value="">

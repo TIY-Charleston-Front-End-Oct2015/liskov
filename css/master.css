@@ -8,32 +8,61 @@ h1 {
 form {
   position: absolute; }
 
+.hidden {
+  display: none; }
+
+.container-fluid, .nav, .navbar, .navbar-default {
+  background-color: #98A2AF; }
+
+.navbar-right {
+  margin: none; }
+
+#loginSubmit {
+  margin: 5% 5% 1% 25%;
+  background-color: #68C3B9;
+  width: 50%;
+  color: white; }
+
+header {
+  width: 100%;
+  height: 75px;
+  background-color: #98A2AF; }
+
+.container {
+  width: 100%;
+  margin: 0;
+  padding: 0; }
+
 .col-md-8 {
-  background-color: #D1D1E0;
-  margin-left: 200px;
-  overflow: hidden;
-  margin-bottom: 0;
-  height: 790px; }
+  display: inline-block;
+  background-color: #CCD1D7;
+  overflow-y: scroll;
+  margin: 0;
+  height: auto; }
   .col-md-8 li img {
     border-radius: 10em;
     width: 14em; }
 
 .messageWriter {
   position: absolute;
-  margin: 45% auto 0 32%;
-  background-color: darkseagreen; }
+  margin: 45% auto 0 32%; }
 
-.col-md-4 {
-  background-color: darkseagreen;
+.col-md-4, .col-md-8 {
+  vertical-align: top; }
+
+.col-sm-4 {
+  display: inline-block;
+  background-color: #68C3B9;
   position: absolute;
-  width: 21%;
+  overflow-y: scroll;
   min-height: 50em;
-  margin-left: -67px; }
+  margin: 0;
+  border-right: 3px solid #004A42; }
 
 #loginContainer {
   color: white;
   border: 2px, black;
-  background-color: darkseagreen;
+  background-color: #68C3B9;
   position: relative;
   left: 300px;
   top: 150px;
@@ -46,15 +75,6 @@ form {
 
 #loginReturn {
   margin: 5% 5% 1% 25%;
-  background-color: #005CB8;
+  background-color: #68C3B9;
   width: 50%;
   color: white; }
-
-#loginSubmit {
-  margin: 5% 5% 1% 25%;
-  background-color: #005CB8;
-  width: 50%;
-  color: white; }
-
-.hidden-class {
-  display: none; }
