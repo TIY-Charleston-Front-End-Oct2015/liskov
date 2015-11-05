@@ -34,14 +34,17 @@ header {
   padding: 0; }
 
 .col-md-8 {
+<<<<<<< HEAD
   display: inline-block;
   background-color: #CCD1D7;
   overflow-y: scroll;
   margin: 0;
-  height: auto; }
-  .col-md-8 li img {
-    border-radius: 10em;
-    width: 14em; }
+  height: auto;
+}
+
+.col-md-8 li img {
+  border-radius: 10em;
+  width: 14em; }
 
 .messageWriter {
   position: absolute;
@@ -78,3 +81,18 @@ header {
   background-color: #68C3B9;
   width: 50%;
   color: white; }
+<<<<<<< HEAD
+=======
+
+.navbar-right {
+  margin: none; }
+
+#loginSubmit {
+  margin: 5% 5% 1% 25%;
+  background-color: #005CB8;
+  width: 50%;
+  color: white; }
+
+.hidden-class {
+  display: none; }
+>>>>>>> 9a81ba2adfdaef5af00b75d9b21281ec6f37e18a

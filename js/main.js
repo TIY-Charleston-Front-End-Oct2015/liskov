@@ -47,7 +47,7 @@ var page = {
               messageid: el._id
             };
             var html = MessageTmpl(oldMessages);
-            $('.col-md-8').prepend(html);
+            $('.col-md-8').append(html);
           })
         },
         failure: function () {
@@ -58,64 +58,64 @@ var page = {
 
     // DOM - SUBMIT NEW MESSAGE
     submitMessage: function () {
-    var messageData = []
+    // var messageData = []
     $('form').on('submit', function(event) {
       event.preventDefault();
       var newMessage = {
         avatar: $("input[name='avatar']").val(),
         username: $("input[name='username']").val(),
         email: $("input[name='email']").val(),
-        content: $('textarea').val()
+        content: $('textarea').val(),
       };
-      messageData.push(newMessage);
-        var MessageTmpl = _.template(templates.message);
-        var html = MessageTmpl(newMessage);
-        $('.col-md-8').append(html);
-
-      // AJAX - SUBMIT NEW MESSAGE
       $.ajax ({
         url: "http://tiny-tiny.herokuapp.com/collections/chatorexM",
         method: 'POST',
         data: newMessage,
         success: function() {
           console.log("SUCCESS");
+          page.loadMessages();
         },
         failure: function () {
           console.log("FAILURE");
         },
-      })
+      });
+
     });
   },
     // DELETE ANY MESSAGE
   deleteMessage: function() {
-    $('.col-md-8').on('click', 'button[type="submit"]', function () {
-      $(this).parent('li').remove();
+    $('.container').on('click', '.delete', function (event) {
+      event.preventDefault();
+    //  deleteID = $('li').closest().attr('#id');
+    var deleteID = $(this).closest('li')[0].id;
+     $.ajax({
+       url: page.urlM + '/' + deleteID,
+       method: 'DELETE',
+       success: function() {
+         console.log(deleteID);
+         document.getElementById(deleteID).remove();
+       },
+       failure: function() {
+         console.log("error");
+       }
+     });
+     // var messageId = $(this).closest('li').data('messageid');
+     // $(this).closest('li').remove();
+    //  $(this).parent('li').remove();
+    //  page.loadMessages();
+     //page.loadMessages();
+
     });
   },
 
-    // DOM DELETE ANY MESSAGE
-    // deleteEventMessage: function (event) {
-    //   event.preventDefault();
-    //   var messageId = $(this).closest('li').data('messageid');
-    //   $(this).closest('li').remove();
-    //   page.deleteMessage(messageId);
-    //   page.loadMessages();
-    //   page.deleteMessage();
-    //
-    //   $('.col-md-8').on('click', 'button[type="submit"]', function () {
+    ////DOM DELETE ANY MESSAGE
+    // deleteEventMessage: function () {
+    //   $('.col-md-8').on('click', '.delete', function (event) {
+    //     event.preventDefault();
+    //     // var messageId = $(this).closest('li').data('messageid');
+    //     // $(this).closest('li').remove();
+    //     page.loadMessages();
     //     $(this).parent('li').remove();
-    //   });
-    // },
-    //   deleteMessage: function () {
-    //   $.ajax ({
-    //     url: page.url,
-    //     method: 'DELETE',
-    //     success: function (res) {
-    //       console.log("SUCCESS");
-    //     },
-    //     failure: function () {
-    //       console.log("FAILURE");
-    //     }
     //   });
     // },
 
@@ -128,7 +128,7 @@ var page = {
           url: page.urlU,
           method:'GET',
           success: function (data){
-            console.log("SUCCESS");
+            console.log("SUCCESS" + data);
             userNameData = data;
             for (var i= 0; i < userNameData.length; i++){
               if (userNameData[i].username === userName){
@@ -139,7 +139,7 @@ var page = {
                 $("#loginContainer").addClass("hidden-class");
                 var userNameDataIter = userNameData[i];
                 userNameDataIter.status = true;
-                page.setStatusActive()
+                page.setStatusActive(userNameData[i]._id);
                 // else {
                 //   alert ("Username does not exist please create a new user");
                 // }
@@ -150,16 +150,16 @@ var page = {
     });
   },
 
-  setStatusActive: function (){
+  setStatusActive: function (idNumber){
     $.ajax({
-      url:page.urlU,
+      url:page.urlU + "/" + idNumber,
       method:"PUT",
       data:"status=true",
       success: function(data){
-      console.log('SUCCESS!')
+      console.log('SUCCESS'+ data);
       },
       failure: function(data){
-        console.log("FAIL ON STATUS CHANGE");
+        console.log("FAIL ON STATUS CHANGE" + data);
       }
     })
   },

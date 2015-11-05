@@ -55,12 +55,13 @@ header {
   padding: 0;
 }
 
-.col-md-8 {
+
   display: inline-block;
   background-color: $mainChatColor;
   overflow-y: scroll;
   margin: 0;
   height: auto;
+
   li{
     img {
       border-radius: 10em;
